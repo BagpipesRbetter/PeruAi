@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%; text-align: center;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Peru</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
+    <style>
+    #content {
+      display: block;
+    }
+    #loading {
+      display: none;
+    }
+    </style>
+  </head>
+  <body style="padding: 0 8vw;">
+
+    <div id="loading"><h1 style="font-size: clamp(24px, 5vw, 40px);"class="dialog-text">Loading...</h1></div>
+    <div id="content">
+      <div class="window" style="max-width: 100%; align-items: center;">
+        <div class="title-bar">
+          <button aria-label="Close" class="close"></button>
+          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">Peru A Ai Chat Bot</h1>
+        </div>
+        <div class="separator"></div>
+        <div class="window-pane">
+          <form method="POST">
+            <input type='text' id="textbox" name="textbox" placeholder="Prompt" onkeypress="this.style.width = ((this.value.length + 2) * 8) + 'px';" id="input"/>
+            <input type="submit" id="submit" style="width: auto;"/>
+          </form>
+        </div>
+      </div>
+      <div class="standard-dialog center scale-down" style="padding: 50px;max-width: 100%;">
+        <h1 style="font-size: clamp(24px, 5vw, 40px);"class="dialog-text">Output:</h1>
+        <div style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">{{ out }}</div>
+      </div>
+    </div>
+    <script>
+      const contentDiv = document.getElementById('content');
+      const loadingDiv = document.getElementById('loading');
+      const submitButton = document.getElementById('submit');
+    
+      submitButton.addEventListener('click', () => {
+        contentDiv.style.display = 'none';
+        loadingDiv.style.display = 'block';
+      });
+    </script>
+
+</html>
+
