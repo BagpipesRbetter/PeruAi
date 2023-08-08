@@ -4,7 +4,7 @@ from llama_cpp import Llama
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__,  static_folder='static')
-llm = Llama(model_path="/Users/evanbarclay/Desktop/llama2/llama.cpp/models/7B/ggml-model-q4_0.bin")
+llm = Llama(model_path="static/ggml-model-q4_0.bin")
 
 def chat(text):
     text = llm(text, max_tokens=512,)
