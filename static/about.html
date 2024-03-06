@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%; text-align: center;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Peru</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
+    <style>
+
+html.dark-mode {
+      filter:invert(100%)
+    }
+    body {background-image: none; background-color: #000000;align-items: center;}
+    .pixel-corners { 
+      --dot-bg: #ffffff;
+      --dot-color: #000000;
+      --dot-size: 1px;
+      --dot-space: 30px;
+      height: 99vh;
+	    background:
+		    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		    var(--dot-color);;
+      overflow:hidden;
+      position: relative;
+      clip-path: polygon(
+    0px calc(100% - 25px),
+    5px calc(100% - 25px),
+    5px calc(100% - 15px),
+    10px calc(100% - 15px),
+    10px calc(100% - 10px),
+    15px calc(100% - 10px),
+    15px calc(100% - 5px),
+    25px calc(100% - 5px),
+    25px 100%,
+    calc(100% - 25px) 100%,
+    calc(100% - 25px) calc(100% - 5px),
+    calc(100% - 15px) calc(100% - 5px),
+    calc(100% - 15px) calc(100% - 10px),
+    calc(100% - 10px) calc(100% - 10px),
+    calc(100% - 10px) calc(100% - 15px),
+    calc(100% - 5px) calc(100% - 15px),
+    calc(100% - 5px) calc(100% - 25px),
+    100% calc(100% - 25px),
+    100% 25px,
+    calc(100% - 5px) 25px,
+    calc(100% - 5px) 15px,
+    calc(100% - 10px) 15px,
+    calc(100% - 10px) 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 5px,
+    calc(100% - 25px) 5px,
+    calc(100% - 25px) 0px,
+    25px 0px,
+    25px 5px,
+    15px 5px,
+    15px 10px,
+    10px 10px,
+    10px 15px,
+    5px 15px,
+    5px 25px,
+    0px 25px
+  );}
+  .window {
+    max-width: 80vw; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+      </style>
+    </head>
+    <body class="body">
+      <div class="pixel-corners">
+        <div>
+          <ul role="menu-bar" style="border-bottom: 4px solid #000000;padding-left: 20px;">
+            <li role="menu-item" tabindex="0" aria-haspopup="false"><a href="/"><img style="height: 16px;width: 16px;" src="{{ url_for('static', filename='img/favicon.ico') }}"></a></li>
+            <li role="menu-item" tabindex="0" aria-haspopup="true">
+              File
+              <ul role="menu">
+                <li role="menu-item"><a href="https://jamesfriend.com.au/pce-js/system6/">Emulate The Os This Was Based Off</a></li>
+              </ul>
+            </li>
+            <li role="menu-item" tabindex="0" aria-haspopup="true">
+              Edit
+              <ul role="menu">
+                <li role="menu-item" class="divider">
+                  <div class="dark-mode-switch">
+                    <input id="dark-mode" type="checkbox" onclick="document.documentElement.classList.toggle('dark-mode')"> 
+                    <label for="dark-mode">Dark mode</label>
+                  </div>
+                  <li role="menu-item">
+                    <p>WARNING! Dark Mode Is Not Persistant Between Pages Or Requests</p>
+                  </li>
+                </li>
+              </ul>
+            </li>
+            <li role="menu-item" tabindex="0" aria-haspopup="true">
+              View
+              <ul role="menu">
+                <li role="menu-item"><a href="/">Home</a></li>
+                <li role="menu-item"><a href="{{ url_for('about')}}">About Peru</a></li>
+              </ul>
+            </li>
+            <li role="menu-item" tabindex="0" aria-haspopup="true">
+              Special
+              <ul role="menu">
+                <li role="menu-item" class="divider"><a href="https://venmo.com/u/Evan-J-Barclay">Support Me</a></li>
+                <li role="menu-item"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=evanjbarclay@gmail.com&su=I love PeruAi&body=Dear Evan,">Email Me!</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      <div class="window" style="max-width: 50vw; align-items: center;">
+        <div class="title-bar">
+          <button aria-label="Close" class="close"></button>
+          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">About Peru</h1>
+        </div>
+        <div class="separator"></div>
+        <div class="window-pane">
+            <p style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
+              Peru functions as a dedicated web client that interfaces with Meta's cutting-edge Llama2 model, which stands out with an expansive parameter count of 7 billion. Notably, Peru offers users access to a reservoir of up-to-date data that surpasses even the information available to OpenAi's ChatGPT4. By acting as this interface, Peru empowers users to seamlessly engage with the Llama2 model. Peru was created by Evan Barclay in 2023 last update (Tue Aug 8)
+            </p><br>
+            <p style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
+              Peru is Hard And Coslty to keep up and running Please Concider donating 
+            </p>
+        </div>
+        </div>
+        </div> 
+    </body>
+</html>
+
