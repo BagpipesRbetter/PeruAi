@@ -1,2 +1,4 @@
-llama-cpp-python
+########ollama app with downloaded llama2 model
+ollama
 flask
+flask_socketio
