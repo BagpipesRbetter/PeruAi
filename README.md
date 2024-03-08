@@ -1,5 +1,5 @@
 # PeruAi
- A Simple Web Page With a Ai text to text bot Based off of Llama2
+ A Simple local llm gui run through python and html
 
 im using the llama2 modle best for my hardware downloaded by ollama you
   you will get better performence based on how much ram your machine has
