@@ -2,7 +2,7 @@
 #change this to alter what model your using. ive had the best luck sticking with llama2 but others will work, see ollama documentation on what models are availble
 _model = "llama2"
 import os, webbrowser
-os.system('pip3 install -r Requirements.txt')
+
 import ollama
 #downloads the correct llm model
 ollama.pull(_model)
