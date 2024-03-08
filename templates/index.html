@@ -152,13 +152,23 @@
         <div class="window-pane">
           <div id="output" style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
             <p style="font-family: Geneva_9; font-size: clamp(8px, 3vw, 16px);">Loading time is dependent on ammount and spped of ram aswell as model depth, see github for more details <a>https://github.com/BagpipesRbetter/PeruAi</a></p>
-            <textarea id="chat-box" rows="10" cols="75" style="font-family: Geneva_9; font-size: clamp(15px, 3vw, 27px);"></textarea>
+            <textarea id="chat-box" rows="15" cols="80" style="font-family: Geneva_9; font-size: clamp(15px, 3vw, 27px);"></textarea>
+            
           </div>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
           <form method="POST" action="/" onsubmit="sendMessage(); return false;">
             <input type='text' id="textbox" name="textbox" placeholder="Prompt" onkeypress="this.style.width = ((this.value.length + 3) * 8) + 'px';" id="input"/>
-            <input type="submit" class="btn" id="submit" style="width: auto;"/>
+            <input type="submit" class="btn" id="submit" style="width: auto;"/><button class="btn" id="scroll">Sroll To bottom</button>
+            <script>
+              const scrollButton = document.getElementById('scroll');
+              const textBox = document.getElementById('chat-box');
+              
+              scrollButton.addEventListener('click', () => {
+                textBox.scrollTop = textBox.scrollHeight;
+              });
+              </script>
           </form>
+
         </div>
 
       </div>
