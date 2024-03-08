@@ -26,7 +26,7 @@
       --dot-color: #000000;
       --dot-size: 1px;
       --dot-space: 30px;
-      height: 99vh;
+      height: 95vh;
       background:
         linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
         linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
@@ -145,11 +145,16 @@
       <div class="window">
         <div class="title-bar">
           <button aria-label="Close" class="close"></button>
-          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">Peru A Ai Chat Bot</h1>
+          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">Peru Ai Chat Bot</h1>
           <button aria-label="Resize" class="resize"></button>
         </div>
         <div class="separator"></div>
         <div class="window-pane">
+          <div id="output" style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
+            <p style="font-family: Geneva_9; font-size: clamp(8px, 3vw, 16px);">Loading time is dependent on ammount and spped of ram aswell as model depth, see github for more details <a>https://github.com/BagpipesRbetter/PeruAi</a></p>
+            <textarea id="chat-box" rows="10" cols="75" style="font-family: Geneva_9; font-size: clamp(15px, 3vw, 27px);"></textarea>
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
           <form method="POST" action="/" onsubmit="sendMessage(); return false;">
             <input type='text' id="textbox" name="textbox" placeholder="Prompt" onkeypress="this.style.width = ((this.value.length + 3) * 8) + 'px';" id="input"/>
             <input type="submit" class="btn" id="submit" style="width: auto;"/>
@@ -157,23 +162,7 @@
         </div>
 
       </div>
-      <div class="window" id="out" style="z-index: 9;">
-        <div class="title-bar" id="outheader" style="z-index: 10;">
-          <button aria-label="Close" class="close"></button>
-          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">Output:</h1>
-          <button aria-label="Resize" class="resize" title="You Found The Secret!" ></button>
-        </div>
-        <div class="separator"></div>
-        <div class="window-pane">
-          <div id="output" style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
-            <p style="font-family: Geneva_9; font-size: clamp(10px, 3vw, 22px);">Loading time is dependent on ram and model depth, see github for more details <a>https://github.com/BagpipesRbetter/PeruAi</a></p>
-          <textarea id="chat-box" rows="10" cols="75" style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);"></textarea></div>
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
-
-
-        </div>
-      </div>
+    
 
     </div>
     </div>
