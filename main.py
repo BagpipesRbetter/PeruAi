@@ -1,8 +1,6 @@
 #!/bin/python
 #change this to alter what model your using. ive had the best luck sticking with llama2 but others will work, see ollama documentation on what models are availble
 _model = "llama2"
-import os, webbrowser
-
 import ollama
 #downloads the correct llm model
 ollama.pull(_model)
@@ -31,8 +29,6 @@ def about():
 #starts everything up
 if __name__ == "__main__":
     #change the port number to anything you want that your computer isnt already using.
-    url = 'http://localhost:5003'
-    webbrowser.open(url)
-    app.run(host="0.0.0.0", port=5003)
+    app.run(host="0.0.0.0", port=5000)
     
 
