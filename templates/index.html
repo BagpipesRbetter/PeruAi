@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html style="height: 100%; width: 100%; text-align: center;">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -8,173 +8,378 @@
     <meta http-equiv="Expires" content="0" />
     <title>Peru</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
-    <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+<style>
+    body {
+      
+        font-family: "Jura", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /*
+        background: linear-gradient(270deg, #334050, #5c6673, #858c96, #adb3b9, #d6d9dc);
+    background-size: 1000% 1000%;
 
-    html.dark-mode {
-      filter:invert(100%)
+    -webkit-animation: AnimationName 26s ease infinite;
+    -moz-animation: AnimationName 26s ease infinite;
+    -o-animation: AnimationName 26s ease infinite;
+    animation: AnimationName 26s ease infinite;*/
+
+
+    background-image: url('../static/img/background.jpg');
+            
+  
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden; /* Prevent scrolling beyond the viewport */
+            position: relative; /* Required for absolute positioning */
+            width: 100vw; /* Full width of the viewport */
+            
+}
+#background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../static/img/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; /* Cover the entire window */
+            background-position: center; /* Center the background */
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+            pointer-events: none; /* Allow clicking through the overlay */
+        }
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+    
+    .container {
+        position: absolute;
+        font-family: "Jura", sans-serif;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        
     }
-    body {background-image: none; background-color: #000000;align-items: center;}
 
-    #content {
-      display: block;
+    .container1 {
+        font-family: "Jura", sans-serif;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        
     }
 
+    .textbox-container {
 
-    .pixel-corners { 
-      --dot-bg: #ffffff;
-      --dot-color: #000000;
-      --dot-size: 1px;
-      --dot-space: 30px;
-      height: 95vh;
-      background:
-        linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-        linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-        var(--dot-color);;
-      overflow:hidden;
-      position: relative;
-      clip-path: polygon(
-    0px calc(100% - 25px),
-    5px calc(100% - 25px),
-    5px calc(100% - 15px),
-    10px calc(100% - 15px),
-    10px calc(100% - 10px),
-    15px calc(100% - 10px),
-    15px calc(100% - 5px),
-    25px calc(100% - 5px),
-    25px 100%,
-    calc(100% - 25px) 100%,
-    calc(100% - 25px) calc(100% - 5px),
-    calc(100% - 15px) calc(100% - 5px),
-    calc(100% - 15px) calc(100% - 10px),
-    calc(100% - 10px) calc(100% - 10px),
-    calc(100% - 10px) calc(100% - 15px),
-    calc(100% - 5px) calc(100% - 15px),
-    calc(100% - 5px) calc(100% - 25px),
-    100% calc(100% - 25px),
-    100% 25px,
-    calc(100% - 5px) 25px,
-    calc(100% - 5px) 15px,
-    calc(100% - 10px) 15px,
-    calc(100% - 10px) 10px,
-    calc(100% - 15px) 10px,
-    calc(100% - 15px) 5px,
-    calc(100% - 25px) 5px,
-    calc(100% - 25px) 0px,
-    25px 0px,
-    25px 5px,
-    15px 5px,
-    15px 10px,
-    10px 10px,
-    10px 15px,
-    5px 15px,
-    5px 25px,
-    0px 25px
-  );}
-  .window {
-    max-width: 80vw; 
-    margin-left: auto;
-    margin-right: auto;
-  }
-    </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+        position: relative;
+        margin: 10px;
+    }
+    .inputbox {font-family: "Jura", sans-serif;
+        width: 70vw;
+        height: fit-content;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;}
+    .textbox {
+        font-family: "Jura", sans-serif;
+        width: 70vw;
+        height: 50vh;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+        font-size: 17px;
+    }
+    .textbox:focus {
+        font-family: "Jura", sans-serif;
+        outline: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .button {
+        font-family: "Jura", sans-serif;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #334050;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+    }
+    .button:hover {
+        font-family: "Jura", sans-serif;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .githublogo {
+        position: fixed;
+        top: 90vh;
+        left: 90vw;
+        z-index: 999;
+        size: 5px;
+    }
+
+    .submit
+    {
+        font-family: "Jura", sans-serif;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: #334050;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.p-menu1{
+    position:absolute;
+    top: 0px;
+        left: center;
+        z-index: 999;
+   height: fit-content;
+   background-color: #fff;
+   border-radius: 15px;
+   padding: 20px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   margin-top: 10px;
+   
+}
+
+
+
+
+/* Hamburger */
+.hamburger1 {
+  height: 45px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  z-index: 120;
+}
+
+.hamburger1 div {
+  background-color: #334050;
+  border-radius: 10px;
+  width: 40px;
+  height: 5px;
+  margin-top: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+  display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle1:checked ~ .menu1 {
+  height: 280px;
+}
+
+
+/* Menu */
+.menu1 {
+  position:relative;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #334050;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: 1fr repeat(6, 0.5fr);
+  grid-row-gap: 5px;
+  padding: 5px;
+  list-style: none;
+  clear: both;
+  width: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+  transition: height .4s ease;
+  z-index: 120;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu1 a:first-child {
+  margin-top: 40px;
+}
+
+.menu1 a:last-child {
+  margin-bottom: 40px;
+}
+
+.link1 {
+    color: white;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+  font: 700 20px 'Jura', sans-serif;
+}
+
+.link1:hover {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #334050;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+
+
+    
+</style>
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
         <script>
-            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            var socket = io.connect('http://127.0.0.0:5003');
 
             socket.on('response', function(data) {
-                document.getElementById('chat-box').value += data.data + ' ';
+                
+                document.getElementById('chat-box').value += data.data + '';
+                
             });
 
             function sendMessage() {
                 var text = document.getElementById('textbox').value;
                 socket.emit('message', {'data': text});
-                return false; // Prevent form submission
+                document.getElementById('textbox').value = "";
+                return false;
             }
         </script>
-  </head>
-  <body class="body">
-    <div class="pixel-corners">
+</head>
+<body>
+    <div id="background"> </div>
+        <section class="p-menu1">
+            <nav id="navbar" class="navigation" role="navigation">
+            <input id="toggle1" type="checkbox" />
+            <label class="hamburger1" for="toggle1">
+                <div class="top"></div>
+                <div class="meat"></div>
+                <div class="bottom"></div>
+            </label>
+            
+            <nav class="menu1">
+                <a class="link1" href="">Github</a>
+                <a class="link1" href="">Dark Mode</a>
+                <a class="link1" href="">Contact</a>
+                <a class="link1" href="">Model</a>
+                <a class="link1" href="">Stop Text Generation</a>
+            </nav>
+        </nav>
+        </section>
 
-    <div id="content">
-      <div>
-        <ul role="menu-bar" style="border-bottom: 4px solid #000000;padding-left: 20px;">
-          <li role="menu-item" tabindex="0" aria-haspopup="false"><a href="/"><img id="img" style="height: 16px;width: 16px;" src="{{ url_for('static', filename='img/favicon.ico') }}"></a></li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
-            File
-            <ul role="menu">
-              <li role="menu-item"><a href="https://jamesfriend.com.au/pce-js/system6/">Emulate The Os This Was Based Off</a></li>
-            </ul>
-          </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
-            Edit
-            <ul role="menu">
-              <li role="menu-item" class="divider">
-                <div class="dark-mode-switch">
-                  <input id="dark-mode" type="checkbox" onclick="document.documentElement.classList.toggle('dark-mode')"> 
-                  <label for="dark-mode">Dark mode</label>
-                </div>
-                <li role="menu-item">
-                  <p>WARNING! Dark Mode Is Not Persistant Between Pages Or Requests</p>
-                </li>
-              </li>
-            </ul>
-          </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
-            View
-            <ul role="menu">
-              <li role="menu-item"><a href="/">Home</a></li>
-              <li role="menu-item"><a href="{{ url_for('about')}}">About Peru</a></li>
-            </ul>
-          </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
-            Special
-            <ul role="menu">
-              <li role="menu-item" class="divider"><a href="https://venmo.com/u/Evan-J-Barclay">Support Me</a></li>
-              <li role="menu-item"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=evanjbarclay@gmail.com&su=I love PeruAi&body=Dear Oven,">Email Me!</a></li>
-            </ul>
-          </li>
-          <li role="menu-item" tabindex="0" aria-haspopup="true">
-            <ul role="menu">
-              <li role="menu-item"><img src="rick-astley.gif" alt="Image description"></li>
-            </ul>
-            
-          </li>
-          
-        </ul>
-      </div>
-      <div class="window">
-        <div class="title-bar">
-          <button aria-label="Close" class="close"></button>
-          <h1 class="title" style=" font-size: clamp(24px, 5vw, 40px);">Peru Ai Chat Bot</h1>
-          <button aria-label="Resize" class="resize"></button>
-        </div>
-        <div class="separator"></div>
-        <div class="window-pane">
-          <div id="output" style="font-family: Geneva_9; font-size: clamp(20px, 3vw, 32px);">
-            <p style="font-family: Geneva_9; font-size: clamp(8px, 3vw, 16px);">Loading time is dependent on ammount and spped of ram aswell as model depth, see github for more details <a>https://github.com/BagpipesRbetter/PeruAi</a></p>
-            <textarea id="chat-box" rows="15" cols="80" style="font-family: Geneva_9; font-size: clamp(15px, 3vw, 27px);"></textarea>
-            
-          </div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+      <div class="container" id="main-container">
+        <h1>PeruAi Chat Bot</h1>
+        <textarea class="textbox" id="chat-box" placeholder="answer will be written here..."></textarea>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
           <form method="POST" action="/" onsubmit="sendMessage(); return false;">
-            <input type='text' id="textbox" name="textbox" placeholder="Prompt" onkeypress="this.style.width = ((this.value.length + 3) * 8) + 'px';" id="input"/>
-            <input type="submit" class="btn" id="submit" style="width: auto;"/><button class="btn" id="scroll">Sroll To bottom</button>
-            <script>
-              const scrollButton = document.getElementById('scroll');
-              const textBox = document.getElementById('chat-box');
-              
-              scrollButton.addEventListener('click', () => {
-                textBox.scrollTop = textBox.scrollHeight;
-              });
-              </script>
+            <div class="textbox-container">
+            <input type='text' class="inputbox" id="textbox" name="textbox" placeholder="Prompt" id="input"/>
+            <input type="submit" class="submit" id="submit" style="width: auto;"/>
+            </div>
+            
           </form>
-
-        </div>
-
-      </div>
-    
-
     </div>
-    </div>
-  </body>
+    <script>
+      // Function to update background position based on window position
+      function updateBackgroundPosition(left, top) {
+          var background = document.getElementById('background');
+          var windowX = left / window.screen.width;
+          var windowY = top / window.screen.height;
+
+          // Update background position based on window position
+          background.style.backgroundPosition = (windowX * 100) + '% ' + (windowY * 100) + '%';
+      }
+
+      // Initial update
+      updateBackgroundPosition({{ left }}, {{ top }});
+
+      // Update on window resize (optional)
+      window.addEventListener('resize', function() {
+          var left = window.screenX;
+          var top = window.screenY;
+          updateBackgroundPosition(left, top);
+      });
+
+      // Update on window move (optional)
+      window.addEventListener('move', function() {
+          var left = window.screenX;
+          var top = window.screenY;
+          updateBackgroundPosition(left, top);
+      });
+  </script>
+</body>
 </html>
